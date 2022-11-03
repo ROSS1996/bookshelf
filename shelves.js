@@ -16,9 +16,24 @@ Book.prototype.info = function () {
 
 addBook.prototype = Object.create(Book.prototype);
 
-const novo = new addBook("Teste", 20, false)
-const novo2 = new addBook("Teste2", 40, false)
-const novo3 = new addBook("Teste3", 50, false)
+new addBook("Don Quixote", 1077, true)
+new addBook("A Tale of Two Cities", 448, false)
+new addBook("The Lord of the Rings", 1137, false)
+
+
+const addButton = document.getElementById('addBook');
+addButton.addEventListener("click", function () {
+    const bookTitle = document.getElementById('title').value
+    const bookPages = document.getElementById('pages').value
+    const bookReadCheck = document.getElementById('read')
+    let bookRead = false
+    if (bookReadCheck.checked) {
+        bookRead = true;
+    }
+    new addBook(bookTitle, bookPages, bookRead);
+    insertBookDOM(bookTitle, bookPages, bookRead);
+    logArray(myBooks);
+})
 
 
 function showBooks (array) {
@@ -45,6 +60,13 @@ function insertBookDOM (title, pages, read) {
     bookObject.appendChild(bookObjectRead);
     // Add requirements to DOM
     booksLista.appendChild(bookObject);
+}
+
+function logArray (array) {
+    books = array;
+    for (const book of books) {
+        console.log(book.info());
+    }
 }
 
 showBooks(myBooks)
