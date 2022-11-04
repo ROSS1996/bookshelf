@@ -80,17 +80,28 @@ header {
     align-items: center;
 }
 
-.card-read {
+.read {
     border-left: 10px solid green !important;
 }
 
 .card button {
-    position: relative;
-    top: 20%;
-    left: 30%;
     background-color: lightgrey;
     border: 1px solid black;
     padding: 3px;
     cursor: pointer;
     border-radius: 4px;
+    width: 25px;
+    height: 25px;
+}
+
+.bookStatus {
+    position: relative;
+    top: 28%;
+    left: 23%;
+}
+
+.removeBook {
+    position: relative;
+    top: 10%;
+    left: 40%;
 }
