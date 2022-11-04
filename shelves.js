@@ -61,7 +61,7 @@ function insertBookDOM (title, pages, read) {
     bookObjectRead.innerText = `Read: ${read}`
     // Book button
     const bookObjectRemoveBtn = document.createElement("button");
-    bookObjectRemoveBtn.innerText = '🗑';
+    bookObjectRemoveBtn.innerText = '🗑️';
     bookObjectRemoveBtn.classList.add('removeBook')
     bookObjectRemoveBtn.addEventListener('click', function(){
         let parent = this.parentElement
@@ -106,7 +106,6 @@ function changeStatus (parent) {
         parent.children[3].innerText = '📕'
     }
     parent.classList.toggle("read");
-    logArray(myBooks)
 }
 
 function logArray (array) {

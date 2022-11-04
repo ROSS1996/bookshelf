@@ -85,7 +85,7 @@ header {
 }
 
 .card button {
-    background-color: lightgrey;
+    background-color: rgb(117, 113, 109);
     border: 1px solid black;
     padding: 3px;
     cursor: pointer;
