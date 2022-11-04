@@ -56,11 +56,26 @@ header {
     border: 1px solid black;
 }
 
-table, th, td {
-    border:1px solid black;
-    padding: 2px;
+#books {
+    width: 98vw;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(200px, 1fr) );
+    gap: 10px;
 }
 
-th {
-    font-weight: 600;
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: lightgrey;
+    border-left: 10px solid green;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }

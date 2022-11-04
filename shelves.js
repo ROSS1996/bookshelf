@@ -45,21 +45,44 @@ function showBooks (array) {
 
 function insertBookDOM (title, pages, read) {
     const booksLista = document.getElementById('books')
-    // Requirements Div
-    const bookObject = document.createElement("tr");
+    // Card
+    const bookObject = document.createElement("div");
+    bookObject.id = title
+    bookObject.classList.add('card')
     // Book title
-    const bookObjectTitle = document.createElement("td");
+    const bookObjectTitle = document.createElement("h3");
     bookObjectTitle.innerText = title
-    const bookObjectPages = document.createElement("td");
+    // Book pages
+    const bookObjectPages = document.createElement("p");
     bookObjectPages.innerText = pages
-    const bookObjectRead = document.createElement("td");
+    // Book read
+    const bookObjectRead = document.createElement("p");
     bookObjectRead.innerText = read
+    // Book button
+    const bookObjectRemoveBtn = document.createElement("button");
+    bookObjectRemoveBtn.innerText = 'Remove';
+    bookObjectRemoveBtn.addEventListener('click', function(){
+        let parent = this.parentElement;
+        alert(`ID: ${parent.id}`)
+        removeBook(parent);
+    })
     // Populate div
     bookObject.appendChild(bookObjectTitle);
     bookObject.appendChild(bookObjectPages);
     bookObject.appendChild(bookObjectRead);
+    bookObject.appendChild(bookObjectRemoveBtn);
     // Add requirements to DOM
     booksLista.appendChild(bookObject);
+}
+
+function removeBook (parent) {
+    //const parente = parent.rows[0].cells.length;
+    //alert(parent)
+    for (i = 0; i < 5; i++) {
+        let item = parent.children[i];
+        console.log(`Item: ${item}`)
+    }
+    bookIndex = myBooks.findIndex(i => i.title === "The Lord of the Rings");
 }
 
 function logArray (array) {
