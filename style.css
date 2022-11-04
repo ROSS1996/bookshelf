@@ -68,7 +68,7 @@ header {
     width: 200px;
     height: 200px;
     background-color: lightgrey;
-    border-left: 10px solid green;
+    border-left: 10px solid red;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
@@ -78,4 +78,19 @@ header {
     gap: 10px;
     justify-content: center;
     align-items: center;
+}
+
+.card-read {
+    border-left: 10px solid green !important;
+}
+
+.card button {
+    position: relative;
+    top: 20%;
+    left: 30%;
+    background-color: lightgrey;
+    border: 1px solid black;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 4px;
 }

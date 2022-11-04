@@ -49,21 +49,21 @@ function insertBookDOM (title, pages, read) {
     const bookObject = document.createElement("div");
     bookObject.id = title
     bookObject.classList.add('card')
+    if (read == true) { bookObject.classList.toggle("card-read"); }
     // Book title
     const bookObjectTitle = document.createElement("h3");
     bookObjectTitle.innerText = title
     // Book pages
     const bookObjectPages = document.createElement("p");
-    bookObjectPages.innerText = pages
+    bookObjectPages.innerText = `Pages: ${pages}`
     // Book read
     const bookObjectRead = document.createElement("p");
-    bookObjectRead.innerText = read
+    bookObjectRead.innerText = `Read: ${read}`
     // Book button
     const bookObjectRemoveBtn = document.createElement("button");
     bookObjectRemoveBtn.innerText = 'Remove';
     bookObjectRemoveBtn.addEventListener('click', function(){
-        let parent = this.parentElement;
-        alert(`ID: ${parent.id}`)
+        let parent = this.parentElement
         removeBook(parent);
     })
     // Populate div
@@ -76,13 +76,13 @@ function insertBookDOM (title, pages, read) {
 }
 
 function removeBook (parent) {
-    //const parente = parent.rows[0].cells.length;
-    //alert(parent)
-    for (i = 0; i < 5; i++) {
-        let item = parent.children[i];
-        console.log(`Item: ${item}`)
+    bookTitle = parent.children[0].innerText
+    bookIndex = myBooks.findIndex(i => i.title === bookTitle);
+    parent.remove()
+    myBooks.splice(bookIndex, 1);
+    for (const book of myBooks) {
+        console.log(book.info());
     }
-    bookIndex = myBooks.findIndex(i => i.title === "The Lord of the Rings");
 }
 
 function logArray (array) {
